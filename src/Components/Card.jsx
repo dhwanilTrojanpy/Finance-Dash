@@ -1,4 +1,3 @@
-// src/StockCard.js
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,12 +8,10 @@ const Card = ({ stockName, ticker, price }) => (
     </div>
     <div className="card-body">
       <h5 className="card-title"> $: {price}</h5>
-      <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <p className="card-text">Additional Content</p>
       <button className="btn btn-primary"> Details</button>
     </div>
-    <div className="card-footer text-muted">
-      2 days ago
-    </div>
+   
   </div>
 );
 
