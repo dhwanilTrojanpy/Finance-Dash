@@ -14,7 +14,7 @@ const Search = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button className="btn btn-secondary" type="button">
+        <button className="btn btn-primary ms-2" type="button">
           Search
         </button>
       </div>
