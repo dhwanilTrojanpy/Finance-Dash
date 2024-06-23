@@ -6,13 +6,18 @@ const Search = () => {
 
   return (
     <div className="search-container" style={{ width: '30rem', margin: '10px' }}>
-      <input
-        type="text"
-        placeholder="Search..."
-        className="form-control"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+     <div className="input-group">
+        <input
+          type="text"
+          placeholder="Search..."
+          className="form-control"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button className="btn btn-secondary" type="button">
+          Search
+        </button>
+      </div>
     </div>
   );
 };
