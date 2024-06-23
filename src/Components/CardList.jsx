@@ -6,9 +6,9 @@ function CardList() {
   return (
     <>
     <Search />
-    <Card StockName = "Microsoft" ticker = "MSFT" price = "100" />
-    <Card StockName = "Apple" ticker = "APPL" price = "200" />
-    <Card StockName = "Tesla" ticker = "TSLA" price = "1000" />
+    <Card stockName = "Microsoft" ticker = "MSFT" price = {100} />
+    <Card stockName = "Apple" ticker = "APPL" price = {200} />
+    <Card stockName = "Tesla" ticker = "TSLA" price = {1000} />
     </>
   )
 }
