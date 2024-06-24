@@ -1,23 +1,29 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Card from './Card';
-import Search from "./Search";
 
-function CardList() {
-  const [search, setSearch] = useState("");
-
-  const handleChange = (e) =>{
-    console.log(e)
-    setSearch(e.target.value)
-  }
+function CardList({searchResult, searched}) {
 
   return (
     <>
-    <Search searchValue = {search} handleChange = {handleChange} />
-    <Card stockName = "Microsoft" ticker = "MSFT" price = {100} />
-    <Card stockName = "Apple" ticker = "APPL" price = {200} />
-    <Card stockName = "Tesla" ticker = "TSLA" price = {1000} />
+      {searchResult.length > 0 ? (
+        searchResult.map((val) => {
+          return (
+            <Card 
+              key={val.symbol} 
+              id={val.symbol} 
+              ticker={val.symbol} 
+              stockName={val.name}
+              stockExchange = {val.stockExchange}
+              exchangeShortName = {val.exchangeShortName} 
+              currency = {val.currency}
+            />
+          );
+        })
+      ) : (
+       searched && <h1>No Results Found</h1> 
+      )}
     </>
-  )
+  );
 }
 
 export default CardList;

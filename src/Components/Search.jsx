@@ -16,7 +16,7 @@ const Search = ({searchValue, handleChange,handleClick}) => {
         <button 
         className="btn btn-primary ms-2" 
         type="button"
-        onClick={(e) => console.log(e)}
+        onClick={handleClick}
         >
           Search
         </button>
@@ -28,6 +28,7 @@ const Search = ({searchValue, handleChange,handleClick}) => {
 Search.propTypes = {
   searchValue : PropTypes.string.isRequired,
   handleChange : PropTypes.func.isRequired,
+  handleClick : PropTypes.func.isRequired
 };
 
 export default Search;
