@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PortfolioButton from './PortfolioButton';
 
-const Card = ({ stockName, ticker,exchangeShortName,stockExchange,currency }) => (
+const Card = ({ stockName, ticker,exchangeShortName,stockExchange,currency,addPortfolio,buttonText }) => (
     <div className="card text-center" style={{ width: '30rem', margin: '10px' }}>
     <div className="card-header">
     {stockName} ({ticker})
@@ -9,7 +10,7 @@ const Card = ({ stockName, ticker,exchangeShortName,stockExchange,currency }) =>
     <div className="card-body">
       <h5 className="card-title"> {currency}</h5>
       <p className="card-text">{exchangeShortName}  : {stockExchange}</p>
-      <button className="btn btn-primary"> Details</button>
+      <PortfolioButton buttonText = {buttonText} addPortfolio = {addPortfolio} />
     </div>
    
   </div>
