@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card';
 
-function CardList({searchResult, searched}) {
+function CardList({searchResult, searched,addPortfolio}) {
 
   return (
     <>
@@ -16,6 +16,8 @@ function CardList({searchResult, searched}) {
               stockExchange = {val.stockExchange}
               exchangeShortName = {val.exchangeShortName} 
               currency = {val.currency}
+              buttonText = "ADD"
+              addPortfolio = {(stock) => (addPortfolio(val))}
             />
           );
         })
