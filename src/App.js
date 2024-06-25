@@ -16,7 +16,7 @@ function App() {
     setSearch(e.target.value);
   }
   const handleClick = async () => {
-    SetSearched(true)
+    SetSearched(!searched)
     try {
       const result = await searchCompanies(search);
       if(Array.isArray(result)){

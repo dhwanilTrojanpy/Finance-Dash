@@ -29,9 +29,9 @@ Card.propTypes = {
   exchangeShortName: PropTypes.string.isRequired,
   stockExchange: PropTypes.string.isRequired,
   currency: PropTypes.string.isRequired,
-  addPortfolio: PropTypes.func.isRequired,
+  addPortfolio: PropTypes.func,
   buttonText: PropTypes.string.isRequired,
-  // removeFromPortfolio: PropTypes.func.isRequired,
+  removeFromPortfolio: PropTypes.func,
 };
 
 export default Card;

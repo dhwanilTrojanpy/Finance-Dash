@@ -35,7 +35,7 @@ const CardList = ({
         </tbody>
       </table>
     ) : (
-      searched && <h1>No Results Found</h1>
+      searched ? <h1>No Results Found</h1> : null
     )}
   </>
 );
