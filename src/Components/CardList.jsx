@@ -1,35 +1,49 @@
-import React from 'react'
-import Card from './Card';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Card from "./Card";
 
-function CardList({
+const CardList = ({ 
   searchResult, 
-  searched,
-  addPortfolio
-  }) {
-
-  return (
-    <>
-      {searchResult.length > 0 ? (
-        searchResult.map((val) => {
-          return (
+  searched, 
+  addPortfolio 
+}) => (
+  <>
+    {searchResult.length > 0 ? (
+      <table className="table table-bordered table-striped">
+        <thead className="thead-light">
+          <tr>
+            <th>Stock Name (Ticker)</th>
+            <th>Currency</th>
+            <th>Exchange Short Name</th>
+            <th>Stock Exchange</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {searchResult.map((val) => (
             <Card 
               key={val.symbol} 
-              id={val.symbol} 
               ticker={val.symbol} 
               stockName={val.name}
-              stockExchange = {val.stockExchange}
-              exchangeShortName = {val.exchangeShortName} 
-              currency = {val.currency}
-              buttonText = "ADD"
-              addPortfolio = {(stock) => (addPortfolio(val))}
+              stockExchange={val.stockExchange}
+              exchangeShortName={val.exchangeShortName} 
+              currency={val.currency}
+              buttonText="ADD"
+              addPortfolio={() => addPortfolio(val)}
             />
-          );
-        })
-      ) : (
-       searched && <h1>No Results Found</h1> 
-      )}
-    </>
-  );
-}
+          ))}
+        </tbody>
+      </table>
+    ) : (
+      searched && <h1>No Results Found</h1>
+    )}
+  </>
+);
+
+CardList.propTypes = {
+  searchResult: PropTypes.array.isRequired,
+  searched: PropTypes.bool.isRequired,
+  addPortfolio: PropTypes.func.isRequired,
+};
 
 export default CardList;

@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import CardList from "./Components/CardList";
-import Search from "./Components/Search";
 import PortfolioCard from "./Components/PortfolioCard";
 import {searchCompanies} from "./api";
+import Navbar from "./Components/Navbar";
+// import "./App.css";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -36,14 +37,14 @@ function App() {
   }
 
   const removeFromPortfolio = (stock) => {
-    const updatedPortfolio = portfolio.filter(val => val.id !== stock.id)
+    const updatedPortfolio = portfolio.filter(val => val.symbol !== stock.symbol);
     setPortfolio(updatedPortfolio);
-
   }
+
   return (
     <div className="App">
+    <Navbar searchValue = {search} handleChange = {handleChange} handleClick ={handleClick}/>
     <PortfolioCard portfolio={portfolio} removeFromPortfolio= {removeFromPortfolio}/>
-    <Search searchValue = {search} handleChange = {handleChange} handleClick ={handleClick}/>
     <CardList searchResult = {searchResult} searched = {searched} addPortfolio = {addPortfolio}/>
     </div>
   );

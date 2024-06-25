@@ -1,0 +1,24 @@
+/* App.css */
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Optional: Add a light background color */
+    padding: 20px; /* Optional: Add some padding */
+  }
+  
+  .navbar {
+    width: 100%;
+    margin-bottom: 20px; /* Add some space below the navbar */
+  }
+  
+  .PortfolioCard,
+  .Search,
+  .CardList {
+    width: 100%;
+    max-width: 800px; /* Optional: Limit the maximum width of the components */
+    margin-bottom: 20px; /* Add some space below each component */
+  }
+  
