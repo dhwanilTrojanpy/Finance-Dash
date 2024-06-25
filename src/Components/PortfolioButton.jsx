@@ -1,9 +1,13 @@
 import React from 'react'
 
-function PortfolioButton({addPortfolio,buttonText }) {
+function PortfolioButton({addPortfolio,buttonText,removeFromPortfolio }) {
   return (
     <div>
-      <button className="btn btn-primary" onClick={addPortfolio}>{buttonText}</button>
+      {
+        buttonText == "ADD" ? <button className="btn btn-outline-success my-2 my-sm-0" onClick={addPortfolio}>{buttonText}</button> :
+        <button className="btn btn-outline-danger my-2 my-sm-0" onClick={removeFromPortfolio}>{buttonText}</button>
+      }
+      
     </div>
   )
 }

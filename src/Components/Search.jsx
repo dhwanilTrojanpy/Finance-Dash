@@ -14,7 +14,7 @@ const Search = ({searchValue, handleChange,handleClick}) => {
           onChange={handleChange}
         />
         <button 
-        className="btn btn-primary ms-2" 
+        className="btn btn-outline-success my-2 my-sm-0" 
         type="button"
         onClick={handleClick}
         >

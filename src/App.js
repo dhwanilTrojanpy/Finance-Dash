@@ -34,9 +34,15 @@ function App() {
     }
     setPortfolio( prev => [...prev, stock]);
   }
+
+  const removeFromPortfolio = (stock) => {
+    const updatedPortfolio = portfolio.filter(val => val.id !== stock.id)
+    setPortfolio(updatedPortfolio);
+
+  }
   return (
     <div className="App">
-    <PortfolioCard portfolio={portfolio}/>
+    <PortfolioCard portfolio={portfolio} removeFromPortfolio= {removeFromPortfolio}/>
     <Search searchValue = {search} handleChange = {handleChange} handleClick ={handleClick}/>
     <CardList searchResult = {searchResult} searched = {searched} addPortfolio = {addPortfolio}/>
     </div>
