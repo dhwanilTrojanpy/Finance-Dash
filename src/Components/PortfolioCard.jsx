@@ -1,6 +1,9 @@
 import React from 'react'
 import Card from './Card';
-function PortfolioCard({portfolio}) {
+function PortfolioCard({
+    portfolio,
+    removeFromPortfolio
+    }) {
     return (
         <>
           {portfolio &&  (
@@ -15,6 +18,7 @@ function PortfolioCard({portfolio}) {
                   exchangeShortName = {val.exchangeShortName} 
                   currency = {val.currency}
                   buttonText = "Remove"
+                  removeFromPortfolio = {(stock) => (removeFromPortfolio(val))}
                 />
               );
             })

@@ -1,7 +1,11 @@
 import React from 'react'
 import Card from './Card';
 
-function CardList({searchResult, searched,addPortfolio}) {
+function CardList({
+  searchResult, 
+  searched,
+  addPortfolio
+  }) {
 
   return (
     <>

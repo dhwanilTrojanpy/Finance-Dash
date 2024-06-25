@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Search = ({searchValue, handleChange,handleClick}) => {
+const Search = ({
+  searchValue, 
+  handleChange,
+  handleClick
+  }) => {
 
   return (
     <div className="search-container" style={{ width: '30rem', margin: '10px' }}>
@@ -14,7 +18,7 @@ const Search = ({searchValue, handleChange,handleClick}) => {
           onChange={handleChange}
         />
         <button 
-        className="btn btn-primary ms-2" 
+        className="btn btn-outline-success my-2 my-sm-0" 
         type="button"
         onClick={handleClick}
         >
