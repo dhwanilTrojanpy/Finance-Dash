@@ -1,6 +1,9 @@
 import React from 'react'
 import Card from './Card';
-function PortfolioCard({portfolio,removeFromPortfolio}) {
+function PortfolioCard({
+    portfolio,
+    removeFromPortfolio
+    }) {
     return (
         <>
           {portfolio &&  (

@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Search = ({searchValue, handleChange,handleClick}) => {
+const Search = ({
+  searchValue, 
+  handleChange,
+  handleClick
+  }) => {
 
   return (
     <div className="search-container" style={{ width: '30rem', margin: '10px' }}>

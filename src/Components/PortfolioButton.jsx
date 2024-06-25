@@ -1,6 +1,10 @@
 import React from 'react'
 
-function PortfolioButton({addPortfolio,buttonText,removeFromPortfolio }) {
+function PortfolioButton({
+  addPortfolio,
+  buttonText,
+  removeFromPortfolio
+ }) {
   return (
     <div>
       {
