@@ -4,9 +4,9 @@ export const searchResultSlice = createSlice({
     initialState : [],
     name : "searchResult",
     reducers : {
-        addToSearchResult : (state,action) => {
+        addToSearchResult : (action) => {
             const stock = action.payload;
-            return [...state, ...stock];  
+            return [stock];  
         }
         },
 })

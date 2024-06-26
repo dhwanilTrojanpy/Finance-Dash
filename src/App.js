@@ -18,7 +18,9 @@ function App() {
       const result = await searchCompanies(search);
       if(Array.isArray(result)){
         console.log(result);  
-        dispatch(addToSearchResult(result)); 
+        result.forEach(stock => {
+          dispatch(addToSearchResult(stock)); // Dispatch addToSearchResult for each stock
+        });
       }       
     } 
     catch (error) {
