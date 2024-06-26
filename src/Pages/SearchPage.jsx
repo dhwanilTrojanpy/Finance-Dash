@@ -5,20 +5,19 @@ import {searchCompanies} from "../api";
 import Navbar from "../Components/Navbar";
 import { useDispatch, useSelector } from 'react-redux';
 import { addToPortfolio, removeFromPortfolio } from '../Slices/PortfolioSlice';
-
-
+import { searchedInSearchBox } from "../Slices/SearchSlice";
+import { addToSearchResult } from "../Slices/SearchResultSlice";
+ 
 function SearchPage() {
     const dispatch = useDispatch();
     const portfolio = useSelector(state => state.portfolio);
+    const search = useSelector(state => state.search);
+    const searchResult = useSelector(state => state.searchResult);
     
-    const [search, setSearch] = useState("");
-    const [searchResult, setSearchResult] = useState([]);
     const [searched, SetSearched] = useState(false);
-        // const [portfolio, setPortfolio] = useState([]);
   
     const handleChange = (e) =>{
-      console.log(e)
-      setSearch(e.target.value);
+        dispatch(searchedInSearchBox(e.target.value));
     }
     const handleClick = async () => {
       SetSearched(!searched)
@@ -26,7 +25,7 @@ function SearchPage() {
         const result = await searchCompanies(search);
         if(Array.isArray(result)){
           console.log(result);  
-          setSearchResult(result);  
+          dispatch(addToSearchResult(result)); 
         }       
       } 
       catch (error) {
@@ -35,23 +34,17 @@ function SearchPage() {
     }
   
     const addPortfolio = (stock) =>{  
-    //   if(portfolio.find((val) => val.symbol === stock.symbol)){
-    //     return ;
-    //   }
-    //   setPortfolio( prev => [...prev, stock]);
         dispatch(addToPortfolio(stock));
     }
   
     const removePortfolio = (stock) => {
-    //   const updatedPortfolio = portfolio.filter(val => val.symbol !== stock.symbol);
-    //   setPortfolio(updatedPortfolio);
         dispatch(removeFromPortfolio(stock));
 
     }
   
   return (
        <div className="App">
-    <Navbar searchValue = {search} handleChange = {handleChange} handleClick ={handleClick}/>
+    {/* <Navbar searchValue = {search} handleChange = {handleChange} handleClick ={handleClick}/> */}
     <PortfolioCard portfolio={portfolio} removeFromPortfolio= {removePortfolio}/>
     <CardList searchResult = {searchResult} searched = {searched} addPortfolio = {addPortfolio}/>
     </div>
