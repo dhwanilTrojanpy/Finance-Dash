@@ -11,26 +11,27 @@ const Card = ({
   addPortfolio,
   buttonText,
   removeFromPortfolio
- }) => (
-    <div className="card text-center" style={{ width: '30rem', margin: '10px' }}>
-    <div className="card-header">
-    {stockName} ({ticker})
-    </div>
-    <div className="card-body">
-      <h5 className="card-title"> {currency}</h5>
-      <p className="card-text">{exchangeShortName}  : {stockExchange}</p>
-      <PortfolioButton buttonText = {buttonText} addPortfolio = {addPortfolio} removeFromPortfolio={removeFromPortfolio}/>
-    </div>
-   
-  </div>
+}) => (
+  <tr>
+    <td>{stockName} ({ticker})</td>
+    <td>{currency}</td>
+    <td>{exchangeShortName}</td>
+    <td>{stockExchange}</td>
+    <td>
+      <PortfolioButton buttonText={buttonText} addPortfolio={addPortfolio} removeFromPortfolio={removeFromPortfolio} />
+    </td>
+  </tr>
 );
 
 Card.propTypes = {
   stockName: PropTypes.string.isRequired,
   ticker: PropTypes.string.isRequired,
-  exchangeShortName : PropTypes.string.isRequired,
-  stockExchange : PropTypes.string.isRequired,
-  currency : PropTypes.string.isRequired,
+  exchangeShortName: PropTypes.string.isRequired,
+  stockExchange: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+  addPortfolio: PropTypes.func,
+  buttonText: PropTypes.string.isRequired,
+  removeFromPortfolio: PropTypes.func,
 };
 
 export default Card;
