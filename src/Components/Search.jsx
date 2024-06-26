@@ -32,9 +32,9 @@ const Search = ({
 };
 
 Search.propTypes = {
-  searchValue : PropTypes.string.isRequired,
-  handleChange : PropTypes.func.isRequired,
-  handleClick : PropTypes.func.isRequired
+  searchValue : PropTypes.string,
+  handleChange : PropTypes.func,
+  handleClick : PropTypes.func
 };
 
 export default Search;
