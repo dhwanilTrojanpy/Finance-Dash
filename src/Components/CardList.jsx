@@ -35,8 +35,11 @@ function CardList  ({
             ))}
           </tbody>
         </table>
-      ) : (
-        searched ? <h1>No Results Found</h1> : null
+      ) :searched && (
+        <div className="alert alert-info text-center mt-3" role="alert">
+          <h4 className="alert-heading">Your Search Result is Empty!</h4>
+           {/* <p>Start Searching stocks to add it to portfolio </p> */}
+        </div>
       )}
     </>
   );

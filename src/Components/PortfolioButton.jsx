@@ -8,7 +8,7 @@ function PortfolioButton({
   return (
     <div>
       {
-        buttonText == "ADD" ? <button className="btn btn-outline-success my-2 my-sm-0" onClick={addPortfolio}>{buttonText}</button> :
+        buttonText == "ADD" ? <button to = "search" className="btn btn-outline-success my-2 my-sm-0" onClick={addPortfolio}>{buttonText}</button> :
         <button className="btn btn-outline-danger my-2 my-sm-0" onClick={removeFromPortfolio}>{buttonText}</button>
       }
       

@@ -7,7 +7,7 @@ import React from "react";
 export const router = createBrowserRouter([
     {
         path : "/",
-        element : <SearchPage/>,
+        element : <App/>,
         children : [
             { path : "" , element : <HomePage/> },
             { path : "search" , element : <SearchPage/> },
