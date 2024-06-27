@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PortfolioButton from './PortfolioButton';
+import {Link} from "react-router-dom";
 
 const Card = ({ 
   stockName, 
@@ -13,7 +14,9 @@ const Card = ({
   removeFromPortfolio
 }) => (
   <tr>
+    <Link to={`/company/{ticker}`}>
     <td>{stockName} ({ticker})</td>
+    </Link>
     <td>{currency}</td>
     <td>{exchangeShortName}</td>
     <td>{stockExchange}</td>

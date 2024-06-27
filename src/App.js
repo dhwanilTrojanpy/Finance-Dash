@@ -1,37 +1,39 @@
-import React , { useState} from "react";
-import { searchCompanies } from "./api";
-import Navbar from "./Components/Navbar";
-import {Outlet} from "react-router";
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { searchedInSearchBox } from "./Slices/SearchSlice";
-import { addToSearchResult } from "./Slices/SearchResultSlice";
+import { searchCompanies } from './api';
+import Navbar from './Components/Navbar';
+import { Outlet } from 'react-router';
+import { searchedInSearchBox } from './Slices/SearchSlice';
+import { addToSearchResult } from './Slices/SearchResultSlice';
+import { isSearched } from './Slices/IsSearchedSlice';
 
 function App() {
   const dispatch = useDispatch();
-  const search = useSelector(state =>state.search)
-  const [searched, SetSearched] = useState(false);
-
+  const search = useSelector((state) => state.search);
+  const isSearchedResult = useSelector((state) => state.isSearched);
 
   const handleClick = async () => {
-    SetSearched(!searched)
+    dispatch(isSearched(!isSearchedResult));
     try {
       const result = await searchCompanies(search);
-      if(Array.isArray(result)){
-        console.log(result);  
-        result.forEach(stock => {
-          dispatch(addToSearchResult(stock)); // Dispatch addToSearchResult for each stock
-        });
-      }       
-    } 
-    catch (error) {
-        console.log(error.message);
+      if (Array.isArray(result)) {
+        console.log(result);
+        dispatch(addToSearchResult(result));
+      }
+    } catch (error) {
+      console.log(error.message);
     }
-  }
+  };
+
   return (
-   <>
-  <Navbar searchValue = {search} handleChange = {(e) =>dispatch(searchedInSearchBox(e.target.value))} handleClick ={handleClick}/>
-  <Outlet />
-   </>
+    <>
+      <Navbar
+        searchValue={search}
+        handleChange={(e) => dispatch(searchedInSearchBox(e.target.value))}
+        handleClick={handleClick}
+      />
+      <Outlet />
+    </>
   );
 }
 

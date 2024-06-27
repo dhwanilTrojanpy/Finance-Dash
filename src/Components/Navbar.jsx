@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from './Search';
+import { Link } from "react-router-dom";
 
 function Navbar({
     searchValue, 
@@ -9,7 +10,9 @@ function Navbar({
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-custom mb-3">
             <div className="container">
+                <Link to="/">
                 <a className="navbar-brand" href="#">AssetAlly</a>
+                </Link>
                 <button 
                     className="navbar-toggler" 
                     type="button" 
@@ -24,7 +27,9 @@ function Navbar({
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#" style={{ fontWeight: 'bold', color: '#333' }}>Dashboard </a>
+                            <Link to="/search">
+                            <div className="nav-item"  style={{ fontWeight: 'bold', color: '#333' }}>Search </div>
+                            </Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav mx-auto"> {/* Use mx-auto for centering */}
