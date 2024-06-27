@@ -1,0 +1,102 @@
+/* Hero.css */
+
+/* Custom background styling */
+#hero {
+  background: linear-gradient(135deg, #a0e7e5, #b4d4ee);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Ensuring the container takes full height */
+.container {
+  height: 100%;
+}
+
+/* Flexbox styling to center content */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.lg\\:flex-row {
+  flex-direction: row;
+}
+
+.mb-44 {
+  margin-bottom: 44px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.space-y-10 > * + * {
+  margin-top: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+.text-6xl {
+  font-size: 4rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-gray-400 {
+  color: #cbd5e1;
+}
+
+.bg-lightGreen {
+  background-color: #3bb273;
+}
+
+.rounded {
+  border-radius: 0.375rem;
+}
+
+.hover\\:opacity-70:hover {
+  opacity: 0.7;
+}
+
+.md\\:w-180 {
+  width: 180px;
+}
+
+.md\\:px-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.lg\\:w-1\\/2 {
+  width: 50%;
+}
+
+.lg\\:mx-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.lg\\:text-left {
+  text-align: left;
+}
