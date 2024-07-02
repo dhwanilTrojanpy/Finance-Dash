@@ -32,6 +32,7 @@ function App() {
         handleChange={(e) => dispatch(searchedInSearchBox(e.target.value))}
         handleClick={handleClick}
       />
+
       <Outlet />
     </>
   );

@@ -8,27 +8,16 @@ function Navbar({
     handleClick
 }) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-custom mb-3">
+        <nav className="navbar navbar-expand-lg navbar-light bg-custom mb-4">
+            <Link to="/">
+                <a className="navbar-brand">AssetAlly</a>
+            </Link>
             <div className="container">
-                <Link to="/">
-                <a className="navbar-brand" href="#">AssetAlly</a>
-                </Link>
-                <button 
-                    className="navbar-toggler" 
-                    type="button" 
-                    data-toggle="collapse" 
-                    data-target="#navbarNav" 
-                    aria-controls="navbarNav" 
-                    aria-expanded="false" 
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
                             <Link to="/search">
-                            <div className="nav-item"  style={{ fontWeight: 'bold', color: '#333' }}>Search </div>
+                            <button className="nav-item btn btn-outline-success"  style={{ fontWeight: 'bold', color: '#333' }}>Search </button>
                             </Link>
                         </li>
                     </ul>

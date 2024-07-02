@@ -19,7 +19,7 @@ const Search = ({
       style={{ marginRight: '10px' }} 
     />
     <button 
-      className="btn btn-outline-success my-2 my-sm-0" 
+      className="btn btn-outline-success my-sm-0" 
       type="button"
       onClick={handleClick}
       style={{ marginLeft: '8px' }} 

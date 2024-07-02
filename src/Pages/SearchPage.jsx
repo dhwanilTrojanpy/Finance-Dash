@@ -9,10 +9,9 @@ function SearchPage() {
     const dispatch = useDispatch();
     const portfolio = useSelector(state => state.portfolio);
     const searchResult = useSelector(state => state.searchResult);
-    const isSearched = useSelector(state => state.isSearched);
+    const isSearched = useSelector(state => state.isSearched.isSearched);
 
     console.log("searchResult",searchResult);
-    // const [searched, SetSearched] = useState(false);
   
     const addPortfolio = (stock) =>{  
         dispatch(addToPortfolio(stock));

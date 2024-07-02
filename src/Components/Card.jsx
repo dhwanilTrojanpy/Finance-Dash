@@ -14,9 +14,12 @@ const Card = ({
   removeFromPortfolio
 }) => (
   <tr>
-    <Link to={`/company/{ticker}`}>
-    <td>{stockName} ({ticker})</td>
-    </Link>
+    
+    <td>
+      <Link to={`/company/${ticker}`}>
+        {stockName} ({ticker})
+      </Link>
+    </td>
     <td>{currency}</td>
     <td>{exchangeShortName}</td>
     <td>{stockExchange}</td>
