@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from "./Card";
-
+import Table from './Table';
+import {CardHeader} from "../headers";
 function CardList  ({ 
   searchResult, 
   searched, 
@@ -9,32 +10,9 @@ function CardList  ({
 }){
   return (
     <>
+   
       {searchResult.length > 0 ? (
-        <table className="table table-bordered table-striped">
-          <thead className="thead-light">
-            <tr>
-              <th>Stock Name (Ticker)</th>
-              <th>Currency</th>
-              <th>Exchange Short Name</th>
-              <th>Stock Exchange</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {searchResult.map((val) => (
-              <Card 
-                key={val.symbol} 
-                ticker={val.symbol} 
-                stockName={val.name}
-                stockExchange={val.stockExchange}
-                exchangeShortName={val.exchangeShortName} 
-                currency={val.currency}
-                buttonText="ADD"
-                addPortfolio={() => addPortfolio(val)}
-              />
-            ))}
-          </tbody>
-        </table>
+         <Table headers = {CardHeader} data = {searchResult} addPortfolio = {addPortfolio} buttonText="ADD"/>
       ) :searched && (
         <div className="alert alert-info text-center mt-3" role="alert">
           <h4 className="alert-heading">Your Search Result is Empty!</h4>

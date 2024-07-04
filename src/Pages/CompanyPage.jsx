@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {getCompanyDetails} from "../api";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import Dashboard from '../Components/Dashboard';
+import Block from '../Components/Block';
 
 
 function CompanyPage() {
@@ -20,12 +21,12 @@ function CompanyPage() {
     }
     getCompany();
   },[ticker])
-  console.log(companyDetails);  
+  console.log("Hello",companyDetails?.currency);  
   return (
     <>
     <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
     <Sidebar />
-      <Dashboard/>
+      <Dashboard><Block title = "Company Name" subtitle = {companyDetails?.companyName}/> </Dashboard>
     </div>
     </>
   )
